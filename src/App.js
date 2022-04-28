@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Switch from "./components/Switch.js";
+import rocket from "./assets/images/Rocket.svg";
 
 function App() {
+  const [switch1, setSwitch1] = useState(false);
+  const [switch2, setSwitch2] = useState(false);
+  const [switch3, setSwitch3] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img className="logo" src={rocket} alt="rocket logo" />
+        <h2>Ready to go</h2>
       </header>
+      <main className="App-main">
+        <div className="left-column">
+          <Switch switchValue={switch1} setSwitch={setSwitch1} />
+          <Switch switchValue={switch2} setSwitch={setSwitch2} />
+          <Switch switchValue={switch3} setSwitch={setSwitch3} />
+        </div>
+        <div className="right-column">
+          <div
+            className={
+              switch1 && switch2 && switch3 ? "result isGreen" : "result isRed"
+            }
+          >
+            {switch1 && switch2 && switch3 ? "Go !" : "No Way !"}
+          </div>
+        </div>
+      </main>
+      <footer className="App-footer">
+        <p>
+          Made with <span>React</span> at <span>Le reacteur</span> by{" "}
+          <span>Pops</span>
+        </p>
+      </footer>
     </div>
   );
 }
