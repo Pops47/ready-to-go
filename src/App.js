@@ -7,6 +7,9 @@ function App() {
   const [switch1, setSwitch1] = useState(false);
   const [switch2, setSwitch2] = useState(false);
   const [switch3, setSwitch3] = useState(false);
+  const handleClick = () => {
+    alert("décollage");
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +24,7 @@ function App() {
         </div>
         <div className="right-column">
           <div
+            onClick={handleClick}
             className={
               switch1 && switch2 && switch3 ? "result isGreen" : "result isRed"
             }
