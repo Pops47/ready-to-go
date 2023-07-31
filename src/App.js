@@ -1,19 +1,24 @@
 import "./App.css";
 import { useState } from "react";
 import Switch from "./components/Switch.js";
-import rocket from "./assets/images/Rocket.svg";
+import rocketImage from "./assets/images/Rocket.svg";
 
 function App() {
+  const [rocket, setRocket] = useState("left");
   const [switch1, setSwitch1] = useState(false);
   const [switch2, setSwitch2] = useState(false);
   const [switch3, setSwitch3] = useState(false);
   const handleClick = () => {
-    alert("décollage");
+    setRocket("right");
   };
   return (
     <div className="App">
       <header className="App-header">
-        <img className="logo" src={rocket} alt="rocket logo" />
+        <img
+          className={rocket === "left" ? "logo left" : "logo right"}
+          src={rocketImage}
+          alt="rocket logo"
+        />
         <h2>Ready to go</h2>
       </header>
       <main className="App-main">

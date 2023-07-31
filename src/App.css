@@ -18,6 +18,11 @@
 .logo {
   height: 3rem;
 }
+.right {
+  transform: translate(800px);
+  transition-duration: 2s;
+}
+
 h2 {
   font-size: 1.5rem;
   padding-left: 2rem;
@@ -73,6 +78,7 @@ button {
 }
 .isGreen {
   background-color: #46ac4a;
+  cursor: pointer;
 }
 .isRed {
   background-color: #d34848;
